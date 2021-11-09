@@ -1,227 +1,317 @@
-@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
-
 :root {
-    /**Primary font**/
-    --ff-primary: "Lexend Deca", sans-serif;
-    /**Second font family**/
-    --ff-second: "Big Shoulders Display", sans-serif;
-    /**Primary colors**/
-    --bright-orange: hsl(31, 77%, 52%);
-    --dark-cyan: hsl(184, 100%, 22%);
-    --very-dark-cyan: hsl(179, 100%, 13%);
-    /**Neutral colors**/
-    --transparent-white: hsla(0, 0%, 100%, 0.75);
-    /*paragraphs*/
-    --very-light-gray: hsl(0, 0%, 95%);
-    /*background, headings, buttons*/
-    /*Body font*/
-    --body-font: 15px;
+  /**Primary font**/
+  --ff-primary:"Lexend Deca", sans-serif;
+  /**Second font family**/
+  --ff-second:"Big Shoulders Display", sans-serif;
+  /**Primary colors**/
+  --bright-orange: hsl(31, 77%, 52%);
+  --dark-cyan: hsl(184, 100%, 22%);
+  --very-dark-cyan: hsl(179, 100%, 13%);
+  /**Neutral colors**/
+  --transparent-white: hsla(0, 0%, 100%, 0.75);
+  /*paragraphs*/
+  --very-light-gray: hsl(0, 0%, 95%);
+  /*background, headings, buttons*/
+  /*Body font*/
+  --body-font:15px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    text-align: center;
-    margin: 0;
-    font-family: "Lexend Deca", sans-serif;
+  text-align: center;
+  margin: 0;
+  font-family: "Lexend Deca", sans-serif;
 }
 
 .grid {
+  margin-top: 20vh;
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
+  height: 400px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas: "sedans" "suvs" "luxury";
+  align-items: center;
+}
+.grid .sedans {
+  grid-area: "sedans";
+  background: var(--bright-orange);
+  height: 100%;
+  padding: 10% 20% 10% 15%;
+  border-radius: 15px 0 0px 15px;
+}
+.grid .suvs {
+  grid-area: "suvs";
+  background: var(--dark-cyan);
+  height: 100%;
+  padding: 10% 15% 10% 15%;
+  text-align: center;
+}
+.grid .luxury {
+  grid-area: "luxury";
+  background: var(--very-dark-cyan);
+  height: 100%;
+  padding: 10% 15% 10% 15%;
+  text-align: center;
+  border-radius: 0px 15px 15px 0px;
+}
+.grid .headers {
+  color: var(--very-light-gray);
+  box-sizing: border-box;
+  height: 10%;
+  width: 50%;
+  margin-top: 70px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+.grid .text {
+  font-family: var(--ff-second);
+  color: var(--transparent-white);
+  font-size: 15px;
+  line-height: 2;
+  text-align: left;
+  margin-bottom: 40px;
+  margin-top: 0;
+}
+.grid .icon {
+  float: left;
+  margin-top: 15px;
+}
+.grid .btn {
+  position: relative;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: 400;
+  top: 10%;
+  cursor: pointer;
+  float: left;
+  margin-bottom: 20px;
+}
+.grid .orange {
+  color: var(--bright-orange);
+}
+.grid .aqua {
+  color: var(--dark-cyan);
+}
+.grid .green {
+  color: var(--very-dark-cyan);
+}
+.grid .btn:hover {
+  border: 2px solid var(--transparent-white);
+  background: inherit;
+  color: var(--transparent-white);
+}
+
+.attribution {
+  position: absolute;
+  left: 45%;
+  top: 100%;
+}
+
+@media (max-width: 810px) {
+  .grid {
     margin-top: 20vh;
     margin-left: auto;
     margin-right: auto;
-    width: 800px;
+    width: 600px;
     height: 400px;
-    display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (1fr)[3];
-    grid-template-columns: repeat(3, 1fr);
-    -ms-grid-rows: auto;
-    grid-template-rows: auto;
-    grid-template-areas: "sedans""suvs""luxury";
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-}
-
-.grid .sedans {
-    grid-area: "sedans";
-    background: var(--bright-orange);
-    height: 100%;
-    padding: 10% 20% 10% 15%;
-    border-radius: 15px 0 0px 15px;
-}
-
-.grid .suvs {
-    grid-area: "suvs";
-    background: var(--dark-cyan);
-    height: 100%;
-    padding: 10% 15% 10% 15%;
-    text-align: center;
-}
-
-.grid .luxury {
-    grid-area: "luxury";
-    background: var(--very-dark-cyan);
-    height: 100%;
-    padding: 10% 15% 10% 15%;
-    text-align: center;
-    border-radius: 0px 15px 15px 0px;
-}
-
-.grid .headers {
-    color: var(--very-light-gray);
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    height: 10%;
-    width: 50%;
-    margin-top: 70px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-}
-
-.grid .text {
-    font-family: var(--ff-second);
-    color: var(--transparent-white);
-    font-size: 15px;
-    line-height: 2;
-    text-align: left;
-    margin-bottom: 40px;
-    margin-top: 0;
-}
-
-.grid .icon {
-    float: left;
-    margin-top: 15px;
-}
-
-.grid .btn {
-    position: relative;
-    border: none;
-    padding: 14px 40px;
+  }
+  .grid .text {
+    margin-bottom: 10px;
+  }
+  .grid .btn {
+    padding: 14px 20px;
     border-radius: 25px;
     font-size: 15px;
     font-weight: 400;
     top: 10%;
     cursor: pointer;
     float: left;
+    margin-bottom: 50px;
+    height: 10%;
+  }
+  .grid .green {
+    margin-top: -23%;
+  }
+}
+@media (max-width: 600px) {
+  .grid {
+    margin-top: 20vh;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    height: 400px;
+    display: grid;
+  }
+  .grid .btn {
+    padding: 14px 20px;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: 400;
+    top: 10%;
+    cursor: pointer;
+    float: left;
+    margin-bottom: 30px;
+    height: 10%;
+  }
+  .grid .green {
+    margin-top: -23%;
+  }
+}
+@media (max-width: 540px) {
+  .grid {
+    margin-top: 20vh;
+    margin-left: auto;
+    margin-right: auto;
+    width: 360px;
+    height: 500px;
+    display: grid;
+  }
+  .grid .headers {
+    height: 5%;
+    width: 10%;
+    margin-top: 70px;
     margin-bottom: 20px;
-}
-
-.grid .orange {
-    color: var(--bright-orange);
-}
-
-.grid .aqua {
-    color: var(--dark-cyan);
-}
-
-.grid .green {
-    color: var(--very-dark-cyan);
-}
-
-.grid .btn:hover {
-    border: 2px solid var(--transparent-white);
-    background: inherit;
+    text-transform: uppercase;
+    font-size: 15px;
+  }
+  .grid .text {
+    font-family: var(--ff-second);
     color: var(--transparent-white);
+    font-size: 11px;
+    line-height: 2;
+    text-align: left;
+    margin-bottom: 0px;
+    margin-top: 0;
+  }
+  .grid .sedans {
+    width: 100%;
+    height: 90%;
+    padding: 5% 10% 5% 7%;
+    border-radius: 15px 0 0px 15px;
+  }
+  .grid .suvs {
+    width: 100%;
+    height: 90%;
+    padding: 5% 10% 5% 7%;
+    border-radius: 0px 0 0px 0px;
+  }
+  .grid .luxury {
+    width: 100%;
+    height: 90%;
+    padding: 5% 10% 5% 7%;
+    border-radius: 0px 15px 15px 0px;
+  }
+  .grid .btn {
+    padding: 14px 20px;
+    border-radius: 25px;
+    font-size: 11px;
+    font-weight: 400;
+    top: 10%;
+    cursor: pointer;
+    float: left;
+    margin-bottom: 20px;
+    height: 10%;
+  }
+  .grid .green {
+    margin-top: -23%;
+  }
 }
-
-.attribution {
-    position: absolute;
-    left: 35%;
-    top: 80%;
-}
-
 @media (max-width: 375px) {
-    .grid {
-        -ms-grid-rows: (1fr)[3];
-        grid-template-rows: repeat(3, 1fr);
-        -ms-grid-columns: auto;
-        grid-template-columns: auto;
-        grid-template-areas: "sedans""suvs""luxury";
-        width: 90%;
-        margin-bottom: 0px;
-        height: 100vh;
-        margin: 5%;
-    }
+  .grid {
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: auto;
+    grid-template-areas: "sedans" "suvs" "luxury";
+    width: 90%;
+    margin-bottom: 0px;
+    height: 100vh;
+    margin: 5%;
+  }
+  .grid .sedans {
+    padding: 25px;
+    height: auto;
+    position: relative;
+    border-radius: 15px 15px 0px 0px;
+    padding: 15%;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+  .grid .suvs {
+    /* height: 10vh; */
+    height: auto;
+    padding: 25px;
+    position: relative;
+    padding: 15%;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .grid .luxury {
+    height: auto;
+    /* height: 80%; */
+    padding: 25px;
+    position: relative;
+    border-radius: 0px 0px 15px 15px;
+    padding: 15%;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .grid .text {
+    text-align: left;
+    /* font-size: 20px; */
+    line-height: 2;
+    height: 25%;
+    display: block;
+    margin-bottom: 0;
+    margin-top: 10px;
+    word-spacing: 5px;
+    font-size: 16px;
+  }
+  .grid .headers {
+    height: 5%;
+    width: 25%;
+    margin-top: 70px;
+    display: block;
+    text-align: left;
+  }
+  .grid .icon {
+    display: block;
+    height: 40px;
+    width: 55px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+  }
+  .grid .btn {
+    border: none;
+    padding: 10px 10px;
+    width: 150px;
+    height: 50px;
+    border-radius: 30px;
+    font-size: 10px;
+    display: block;
+    float: left;
+    font-size: 13px;
+    font-weight: 500;
+    width: 160px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
 
-    .grid .sedans {
-        padding: 25px;
-        height: auto;
-        position: relative;
-        border-radius: 15px 15px 0px 0px;
-        padding: 15%;
-        padding-bottom: 0;
-        padding-top: 0;
-    }
-
-    .grid .suvs {
-        /* height: 10vh; */
-        height: auto;
-        padding: 25px;
-        position: relative;
-        padding: 15%;
-        padding-top: 0;
-        padding-bottom: 0;
-    }
-
-    .grid .luxury {
-        height: auto;
-        /* height: 80%; */
-        padding: 25px;
-        position: relative;
-        border-radius: 0px 0px 15px 15px;
-        padding: 15%;
-        padding-top: 0;
-        padding-bottom: 0;
-    }
-
-    .grid .text {
-        text-align: left;
-        /* font-size: 20px; */
-        line-height: 2;
-        height: 25%;
-        display: block;
-        margin-bottom: 0;
-        margin-top: 10px;
-        word-spacing: 5px;
-    }
-
-    .grid .headers {
-        height: 5%;
-        width: 25%;
-        margin-top: 70px;
-        display: block;
-        text-align: left;
-    }
-
-    .grid .icon {
-        display: block;
-        height: 40px;
-        width: 55px;
-        margin-top: 20px;
-        margin-bottom: 25px;
-    }
-
-    .grid .btn {
-        border: none;
-        padding: 10px 10px;
-        width: 150px;
-        height: 50px;
-        border-radius: 30px;
-        font-size: 10px;
-        display: block;
-        float: left;
-        font-size: 13px;
-        font-weight: 500;
-        width: 160px;
-        margin-top: 20px;
-        margin-bottom: 40px;
-    }
-
-    .attribution {
-        position: absolute;
-        left: 1%;
-        top: 155%;
-    }
+  .attribution {
+    position: absolute;
+    left: 1%;
+    top: 155%;
+  }
 }
+/*# sourceMappingURL=styles.scss.map */
 
 /*# sourceMappingURL=styles.css.map */
